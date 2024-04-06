@@ -70,14 +70,15 @@ const PaymentMethodItem = styled(Paper)(({ theme }) => ({
     justifyContent: 'space-around',
     alignItems: 'center',
     textAlign: 'center',
-    height: '63px',
-    width: '63px',
+    height: '64px',
+    width: '94px',
     border: 'solid 1px #E9E6EF',
     borderRadius: '8px',
     marginRight: '5px',
     cursor: 'pointer',
     '&:hover': {
-        backgroundColor: '#E9E6EF'
+        backgroundColor: '#4723AD',
+        color: '#fff'
     }
     
 }));
@@ -106,7 +107,7 @@ const sliderSettings = {
     dots: false,
     infinite: false,
     speed: 500,
-    slidesToShow: 5,
+    slidesToShow: 3,
     slidesToScroll: 1,
     initialSlide: 0,
     nextArrow: <NextArrow />,
@@ -223,8 +224,8 @@ function PaymentInfo() {
             <form>
                 <Box 
                     sx={{ 
-                        backgroundColor: '#E9E6EF', 
                         p: '10px 15px', 
+                        border: 'solid 1px #E9E6EF',
                         borderRadius: '12px', 
                         marginBottom: '20px' 
                     }}
@@ -271,88 +272,157 @@ function PaymentInfo() {
                             </Stack>
                         </Grid>
                     </Grid>
-                    <Box sx={{ backgroundColor: '#E9E6EF' }} >
+                    <CardInput 
+                        type='text' 
+                        variant='outlined' 
+                        placeholder='Card Number' 
+                        size='small'
+                        InputProps={{
+                            startAdornment: <InputAdornment 
+                                                position='start'
+                                                sx={{ 
+                                                    backgroundColor: '#fff', 
+                                                    p: 0, 
+                                                    m: 0
+                                                }}
+                                            >
+                                                <img src={Card1} alt={`card`}></img>
+                                            </InputAdornment>
+                        }}
+                    ></CardInput>
+                    <Stack      
+                        direction='row' 
+                        justifyContent='space-between'
+                        spacing={1}
+                        mb={1.3}
+                    >
                         <CardInput 
                             type='text' 
-                            variant='outlined' 
-                            placeholder='Card Number' 
+                            variant="outlined" 
+                            placeholder="MM / YYYY" 
+                            size='small'
+                        ></CardInput>
+                        <CardInput 
+                            type='password' 
+                            variant="outlined" 
+                            placeholder="CVC" 
                             size='small'
                             InputProps={{
-                                startAdornment: <InputAdornment 
-                                                    position='start'
-                                                    sx={{ 
-                                                        backgroundColor: '#fff', 
-                                                        p: 0, 
-                                                        m: 0
-                                                    }}
-                                                >
-                                                    <img src={Card1} alt={`card`}></img>
-                                                </InputAdornment>
+                                endAdornment: <InputAdornment 
+                                                position='end' 
+                                                sx={{ 
+                                                    backgroundColor: '#fff',
+                                                    p: 0,
+                                                    m: 0
+                                                }}
+                                            >
+                                                <img src={infoCircle} alt={`info`}></img>
+                                            </InputAdornment>
                             }}
-                        ></CardInput>
-                        <Stack      
-                            direction='row' 
-                            justifyContent='space-between'
-                            spacing={1}
-                            mb={1.3}
-                        >
-                            <CardInput 
-                                type='text' 
-                                variant="outlined" 
-                                placeholder="MM / YYYY" 
-                                size='small'
-                            ></CardInput>
-                            <CardInput 
-                                type='password' 
-                                variant="outlined" 
-                                placeholder="CVC" 
-                                size='small'
-                                InputProps={{
-                                    endAdornment: <InputAdornment 
-                                                    position='end' 
-                                                    sx={{ 
-                                                        backgroundColor: '#fff',
-                                                        p: 0,
-                                                        m: 0
-                                                    }}
-                                                >
-                                                    <img src={infoCircle} alt={`info`}></img>
-                                                </InputAdornment>
-                                }}
-                            ></CardInput>   
-                        </Stack>
-                        <CardInput 
-                            type='text' 
-                            variant='outlined' 
-                            placeholder="Cardholder Name" 
-                            size='small'
-                        ></CardInput>
-                    </Box>
+                        ></CardInput>   
+                    </Stack>
+                    <CardInput 
+                        type='text' 
+                        variant='outlined' 
+                        placeholder="Cardholder Name" 
+                        size='small'
+                    ></CardInput>
                 </Box>
                 <Box>
                     <CardInput 
                         type="text"
                         variant='outlined' 
-                        placeholder="Address" 
-                        size='small'
-                    ></CardInput>
-                    <CardInput 
-                        type='text' 
-                        variant='outlined' 
-                        placeholder="City" 
-                        size='small'
-                    ></CardInput>
-                    <CardInput 
-                        type='text' 
-                        variant='outlined' 
-                        placeholder="Country" 
+                        placeholder="Name" 
                         size='small'
                     ></CardInput>
                     <Stack 
                         direction='row'
-                        justifyContent='space-between'
-                        spacing={1}
-                        mb={1.3}
+                        sx={{
+                            '& div:first-child>div': {
+                                borderRadius: '4px 0 0 4px'
+                            },
+                            '& div:first-child>div>input': {
+                                borderRadius: '4px 0 0 4px'
+                            },
+                            '& div:last-child>div': {
+                                borderRadius: '0 4px 4px 0'
+                            },
+                            '& div:last-child>div>input': {
+                                borderRadius: '0 4px 4px 0'
+                            }
+                        }}
+                    >
+                        <CardInput 
+                            type='text' 
+                            variant='outlined' 
+                            placeholder="Middle Name" 
+                            size='small'
+                        ></CardInput>
+                        <CardInput 
+                            type='text' 
+                            variant='outlined' 
+                            placeholder="Last Name" 
+                            size='small'
+                        ></CardInput>
+                    </Stack>
+                    <CardInput 
+                        type="text"
+                        variant='outlined' 
+                        placeholder="Address 1" 
+                        size='small'
+                    ></CardInput>
+                    <CardInput 
+                        type="text"
+                        variant='outlined' 
+                        placeholder="Address 1" 
+                        size='small'
+                    ></CardInput>
+                    <Stack 
+                        direction='row'
+                        sx={{
+                            '& div:first-child>div': {
+                                borderRadius: '4px 0 0 4px'
+                            },
+                            '& div:first-child>div>input': {
+                                borderRadius: '4px 0 0 4px'
+                            },
+                            '& div:last-child>div': {
+                                borderRadius: '0 4px 4px 0'
+                            },
+                            '& div:last-child>div>input': {
+                                borderRadius: '0 4px 4px 0'
+                            }
+                        }}
+                    >
+                        <CardInput 
+                            type='text' 
+                            variant='outlined' 
+                            placeholder="City" 
+                            size='small'
+                        ></CardInput>
+                        <CardInput 
+                            type='text' 
+                            variant='outlined' 
+                            placeholder="Country" 
+                            size='small'
+                        ></CardInput>
+                    </Stack>
+                    <Stack 
+                        direction='row'
+                        sx={{
+                            '& div:first-child>div': {
+                                borderRadius: '4px 0 0 4px'
+                            },
+                            '& div:first-child>div>input': {
+                                borderRadius: '4px 0 0 4px'
+                            },
+                            '& div:last-child>div': {
+                                borderRadius: '0 4px 4px 0'
+                            },
+                            '& div:last-child>div>input': {
+                                borderRadius: '0 4px 4px 0'
+                            }
+                        }}
                     >
                         <CardInput 
                             type='text' 
@@ -367,6 +437,12 @@ function PaymentInfo() {
                             size='small'
                         ></CardInput>
                     </Stack>
+                    <CardInput 
+                        type='text' 
+                        variant='outlined' 
+                        placeholder="Email" 
+                        size='small'
+                    ></CardInput>
                     <CardInput 
                         type='text' 
                         variant='outlined' 

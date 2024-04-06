@@ -1,7 +1,6 @@
 import * as React from "react";
-import Box from '@mui/system/Box';
 import Grid from '@mui/system/Unstable_Grid';
-import { Divider, Paper } from '@mui/material';
+import { Divider, Paper, Box } from '@mui/material';
 import PaymentInfo from "../PaymentInfo";
 import PaymentSummary from '../PaymentSummary';
 
@@ -10,11 +9,12 @@ function PaymentWrap() {
 		<Paper 
 			sx={{ 
 				fontFamily: 'sans-serif',
-				margin: '20px auto', 
+				margin: '15px 10px', 
 				width: {
 					xs: 'auto',
 					sm: 'auto',
-					md: '727px',
+					md: 'auto',
+					lg: 'auto',
 				}
 			}} 
 			elevation={4}
