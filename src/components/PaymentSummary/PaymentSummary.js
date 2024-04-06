@@ -53,6 +53,7 @@ const ButtonPay = styled(Button)(({ theme }) => ({
 	fontSize: '18px',
 	lineHeight: '21.78px',
 	textAlign: 'center',
+	marginBottom: '5px',
 	gap: '4px',
 	cursor: 'pointer',
 	'&:hover': {
@@ -64,72 +65,81 @@ function PaymentSummary() {
   	return (
 		<Stack 
 			direction='column' 
-			sx={{ padding: '10px 0' }}
+			justifyContent='space-between'
+			sx={{ 
+				padding: '10px 0', 
+				height: '100%'
+			}}
 		>
-			<Typography 
-				variant='subtitle2' 
-				component='b' 
-				sx={{
-					fontSize: '16px',
-					lineHeight: '19.36px',
-					color: '#2E2A36',
-					fontWeight: '600'
-				}}
-			>
-				Summary:
-			</Typography>
-			<Box mt={1.9} mb={1.9}>
-				<Table>
-					<TableBody>
-						{summaryData.map(( item, key ) => {
-							const { title, value } = item;
-							return (<TableRow
-								key={`summary${key}`}
+			<Box>
+				<Typography 
+					variant='subtitle2' 
+					component='b' 
+					sx={{
+						fontSize: '16px',
+						lineHeight: '19.36px',
+						color: '#2E2A36',
+						fontWeight: '600'
+					}}
+				>
+					Summary:
+				</Typography>
+				<Box mt={1.9} mb={1.9}>
+					<Table>
+						<TableBody>
+							{summaryData.map(( item, key ) => {
+								const { title, value } = item;
+								return (<TableRow
+									key={`summary${key}`}
+									sx={{
+										'& td, & th': { 
+											border: 0,
+											padding: '0 0 9px 0',
+											fontSize: '16px',
+											fontWeight: '400',
+											lineHeight: '19.36px',
+										},
+									}}
+								>
+									<TableCell align="left" >{title}:</TableCell>
+									<TableCell align="right" >$ {value}</TableCell>
+								</TableRow>);
+							})}
+							<TableRow 
+								key={`summary${summaryData.length}`}
 								sx={{
+									paddingBottom: '15px',
 									'& td, & th': { 
 										border: 0,
-										padding: '0 0 9px 0',
+										borderTop: 'solid 1px #e5e5e5',
+										padding: '10px 0',
+										marginTop: '10px',
 										fontSize: '16px',
-										fontWeight: '400',
+										fontWeight: '600',
 										lineHeight: '19.36px',
-									},
+									}
 								}}
 							>
-								<TableCell align="left" >{title}:</TableCell>
-								<TableCell align="right" >$ {value}</TableCell>
-							</TableRow>);
-						})}
-						<TableRow 
-							key={`summary${summaryData.length}`}
-							sx={{
-								paddingBottom: '15px',
-								'& td, & th': { 
-									border: 0,
-									borderTop: 'solid 1px #e5e5e5',
-									padding: '10px 0',
-									marginTop: '10px',
-									fontSize: '16px',
-									fontWeight: '600',
-									lineHeight: '19.36px',
-								}
-							}}
-						>
-							<TableCell align="left" fontWeight='bord' >Total:</TableCell>
-							<TableCell align="right" >$ {summaryData.reduce( (sum, { value } ) => { return sum += value }, 0)}</TableCell>
-						</TableRow>
-					</TableBody>
-				</Table>
-			</Box>
-			<ButtonPay>
-				PAY
-			</ButtonPay>
-			<Stack 
-				direction='row'
-				mt={1}
-				mb={1}
-				spacing={1}
-			>
-				<ButtonPay>
+								<TableCell align="left" fontWeight='bord' >Total:</TableCell>
+								<TableCell align="right" >$ {summaryData.reduce( (sum, { value } ) => { return sum += value }, 0)}</TableCell>
+							</TableRow>
+						</TableBody>
+					</Table>
+				</Box>
+				<ButtonPay sx={{ backgroundColor: '#4723AD'}}>
+					PAY
+				</ButtonPay>
+				<Stack 
+					direction="row" 
+					justifyContent='space-around' 
+					alignItems='center' 
+					spacing={2} 
+				>
+					<Box sx={{ border: 'solid 1px #E9E6EF', width: '100%' }} />
+					<Typography>or</Typography>
+					<Box sx={{ border: 'solid 1px #E9E6EF', width: '100%' }} />
+				</Stack>
+				<ButtonPay sx={{ backgroundColor: '#000'}}>
 					<img
 						key={`img${ApplePay}`}
 						src={`${ApplePay}`}
@@ -145,39 +155,42 @@ function PaymentSummary() {
 						loading="lazy" 
 					/>
 				</ButtonPay>
-			</Stack>
-			<Typography 
-				variant='subtitle2' 
-				component='p' 
-				mt={1} 
-				mb={1} 
-				sx={{ 
-					fontSize: '11px',
-					fontWeight: '500',
-					textAlign: 'center',
-					color: '#2E2A36'
-				}}
-			>
-				By submiting your payment, you agree to the <Link href="#" color='secondary' underline='hover'>Terms and Conditions</Link> and <Link href="#" color='secondary' underline='hover'>Privacy Policy</Link>
-			</Typography>
-			<Stack 
-				spacing={0.5} 
-				direction='row' 
-				justifyContent='space-between'
-			>
-				{iconData.map(( item, key ) => (
-					<img 
-						key={`img${key}`} 
-						sx={{ 
-							width: 24,
-							height: 17
-						}} 
-						src={`${item.img}`} 
-						alt={item.title} 
-						loading="lazy" 
-					/>
-				))}
-			</Stack>
+				<Typography 
+					variant='subtitle2' 
+					component='p' 
+					mt={1} 
+					mb={1} 
+					sx={{ 
+						fontSize: '11px',
+						fontWeight: '500',
+						textAlign: 'center',
+						color: '#2E2A36'
+					}}
+				>
+					By submiting your payment, you agree to the <Link href="#" color='secondary' underline='hover'>Terms and Conditions</Link> and <Link href="#" color='secondary' underline='hover'>Privacy Policy</Link>
+				</Typography>
+			</Box>
+			<Box>
+				<Stack 
+					spacing={0.5} 
+					direction='row' 
+					justifyContent='space-between'
+					sx={{ marginBottom: '20px', opacity: .5 }}
+				>
+					{iconData.map(( item, key ) => (
+						<img 
+							key={`img${key}`} 
+							sx={{ 
+								width: 24,
+								height: 17
+							}} 
+							src={`${item.img}`} 
+							alt={item.title} 
+							loading="lazy" 
+						/>
+					))}
+				</Stack>
+			</Box>
 		</Stack>
   	);
 }
