@@ -41,7 +41,7 @@ function EditSelectionWrap() {
                 Save
             </Button>
             <FormControlLabel
-                control={<SwitchInput checked={true} onChange={handleChange} />}
+                control={<SwitchInput checked={checked} onChange={handleChange} />}
                 labelPlacement='start'
                 label='Edit mode'
                 sx={{
