@@ -14,6 +14,7 @@ root.render(
 			justifyContent='space-between'
 		>
 			<Grid 
+				item
 				xs={12} 
 				sm={12}
 				md={3}
@@ -22,6 +23,7 @@ root.render(
 				<PaymentCustomiseWrap />
 			</Grid>
 			<Grid 
+				item
 				xs={12} 
 				sm={12} 
 				md={9}

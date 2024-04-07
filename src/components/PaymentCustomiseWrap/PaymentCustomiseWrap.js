@@ -5,6 +5,7 @@ import AlignLeft from '../../assets/Linear/AlignLeft.svg';
 import AlignCenter from '../../assets/Linear/AlignCenter.svg';
 import AlignRight from '../../assets/Linear/AlignRight.svg';
 import { useState } from "react";
+import { sides } from "@floating-ui/utils";
 
 const currencies = [
     {
@@ -137,11 +138,41 @@ const fontList = [
 
 function PaymentCustomiseWrap() {
     const [formats, setFormats] = useState();
-    console.log(formats)
-  
+    const [ backgroundColor, setBgColor ] = useState('#F6F6F6');
+    const [ fieldColor, setFieldColor ] = useState('#FFFFFF');
+    const [ lineColor, setLineColor ] = useState('#E9E6EF');
+    const [ iconColor, setIconColor ] = useState('#4723AD');
+    const [ btnColor, setBtnColor ] = useState('#4723AD');
+
     const handleFormatChange = ( event, updatedFormats ) => {
-      setFormats(updatedFormats)
+        setFormats(updatedFormats)
     }
+
+    const handleBgColorChange = ({ target }) => {
+        console.log(target.value)
+        setBgColor(target.value)
+    }
+
+    const handleFieldColorChange = ({ target }) => {
+        console.log(target.value)
+        setFieldColor(target.value)
+    }
+
+    const handleLineColorChange = ({ target }) => {
+        console.log(target.value)
+        setLineColor(target.value)
+    }
+
+    const handleIconColorChange = ({ target }) => {
+        console.log(target.value)
+        setIconColor(target.value)
+    }
+
+    const handleBtnColorChange = ({ target }) => {
+        console.log(target.value)
+        setBtnColor(target.value)
+    }
+
 
     return(
         <Box m={2}>
@@ -471,10 +502,14 @@ function PaymentCustomiseWrap() {
                                     width: '25px',
                                     border: 'solid 1px #E9E6EF',
                                     borderRight: '0',
-                                    borderRadius: '4px 0 0 4px'
+                                    borderRadius: '4px 0 0 4px',
+                                    backgroundColor
                                 }}
                             ></Box>
                             <TextField
+                                defaultValue='#F6F6F6'
+                                value={backgroundColor}
+                                onChange={handleBgColorChange}
                                 sx={{
                                     height: '25px',
                                     width: '80px',
@@ -484,11 +519,13 @@ function PaymentCustomiseWrap() {
                                         border: 'none'
                                     },
                                     '& input': {
-                                        padding: '1px 10px',
-                                        color: '#4723ad'
+                                        padding: '5px 10px',
+                                        color: '#4723ad',
+                                        fontSize: '12px',
+                                        lineHeight: '14.52px'
                                     }
                                 }}
-                            ></TextField>
+                            />
                         </Stack>
                     </Stack>
                     <Stack direction="row" justifyContent='space-between' alignItems='center' >
@@ -510,10 +547,13 @@ function PaymentCustomiseWrap() {
                                     width: '25px',
                                     border: 'solid 1px #E9E6EF',
                                     borderRight: '0',
-                                    borderRadius: '4px 0 0 4px'
+                                    borderRadius: '4px 0 0 4px',
+                                    backgroundColor: fieldColor
                                 }}
                             ></Box>
                             <TextField
+                                defaultValue='#FFFFFF'
+                                onChange={handleFieldColorChange}
                                 sx={{
                                     height: '25px',
                                     width: '80px',
@@ -523,8 +563,10 @@ function PaymentCustomiseWrap() {
                                         border: 'none'
                                     },
                                     '& input': {
-                                        padding: '1px 10px',
-                                        color: '#4723ad'
+                                        padding: '5px 10px',
+                                        color: '#4723ad',
+                                        fontSize: '12px',
+                                        lineHeight: '14.52px'
                                     }
                                 }}
                             ></TextField>
@@ -549,10 +591,13 @@ function PaymentCustomiseWrap() {
                                     width: '25px',
                                     border: 'solid 1px #E9E6EF',
                                     borderRight: '0',
-                                    borderRadius: '4px 0 0 4px'
+                                    borderRadius: '4px 0 0 4px',
+                                    backgroundColor: lineColor
                                 }}
                             ></Box>
                             <TextField
+                                defaultValue='#E9E6EF'
+                                onChange={handleLineColorChange}
                                 sx={{
                                     height: '25px',
                                     width: '80px',
@@ -562,8 +607,10 @@ function PaymentCustomiseWrap() {
                                         border: 'none'
                                     },
                                     '& input': {
-                                        padding: '1px 10px',
-                                        color: '#4723ad'
+                                        padding: '5px 10px',
+                                        color: '#4723ad',
+                                        fontSize: '12px',
+                                        lineHeight: '14.52px',
                                     }
                                 }}
                             ></TextField>
@@ -588,10 +635,13 @@ function PaymentCustomiseWrap() {
                                     width: '25px',
                                     border: 'solid 1px #E9E6EF',
                                     borderRight: '0',
-                                    borderRadius: '4px 0 0 4px'
+                                    borderRadius: '4px 0 0 4px',
+                                    backgroundColor: iconColor
                                 }}
                             ></Box>
                             <TextField
+                                defaultValue='#4723AD'
+                                onChange={handleIconColorChange}
                                 sx={{
                                     height: '25px',
                                     width: '80px',
@@ -601,8 +651,10 @@ function PaymentCustomiseWrap() {
                                         border: 'none'
                                     },
                                     '& input': {
-                                        padding: '1px 10px',
-                                        color: '#4723ad'
+                                        padding: '5px 10px',
+                                        color: '#4723ad',
+                                        fontSize: '12px',
+                                        lineHeight: '14.52px',
                                     }
                                 }}
                             ></TextField>
@@ -663,10 +715,13 @@ function PaymentCustomiseWrap() {
                                     width: '25px',
                                     border: 'solid 1px #E9E6EF',
                                     borderRight: '0',
-                                    borderRadius: '4px 0 0 4px'
+                                    borderRadius: '4px 0 0 4px',
+                                    backgroundColor: btnColor
                                 }}
                             ></Box>
                             <TextField
+                                defaultValue='#4723AD'
+                                onChange={handleBtnColorChange}
                                 sx={{
                                     height: '25px',
                                     width: '80px',
@@ -676,8 +731,10 @@ function PaymentCustomiseWrap() {
                                         border: 'none'
                                     },
                                     '& input': {
-                                        padding: '1px 10px',
-                                        color: '#4723ad'
+                                        padding: '5px 10px',
+                                        color: '#4723ad',
+                                        fontSize: '12px',
+                                        lineHeight: '14.52px'
                                     }
                                 }}
                             ></TextField>
