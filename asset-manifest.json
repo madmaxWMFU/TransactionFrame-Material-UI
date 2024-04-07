@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.js": "/static/js/main.a1878afc.js",
+    "static/media/visaSecure.svg": "/static/media/visaSecure.e7ce6e589a21a7786c3b393800fcd93a.svg",
+    "static/media/masterCardSecureCode.svg": "/static/media/masterCardSecureCode.7b01f9dfb0e5aab6cae6b01aaf867e5e.svg",
+    "static/media/pciCompliant.svg": "/static/media/pciCompliant.8112934127b8c4971f0cdc731dc5c825.svg",
+    "static/media/en.svg": "/static/media/en.aa5e92800a1d588d0ae8dde74a301bd0.svg",
+    "static/media/UnionPay.svg": "/static/media/UnionPay.47f364f6c0b472ea77ac2b55c700958f.svg",
+    "static/media/verifiedByVisa.svg": "/static/media/verifiedByVisa.45254749df76b4785162dfc47f554e07.svg",
+    "static/media/JCB.svg": "/static/media/JCB.d5f62b788742b6e14833bcee8da93400.svg",
+    "static/media/GooglePay.svg": "/static/media/GooglePay.2377685d63489abf12cc858bd5e35090.svg",
+    "static/media/ApplePay.svg": "/static/media/ApplePay.25607396810810d18ab74d9849472296.svg",
+    "static/media/Klarna.svg": "/static/media/Klarna.d009483525547a17b821699dcc8cd650.svg",
+    "static/media/Skrill.svg": "/static/media/Skrill.9fff6e22653de8adf36c60285be6a608.svg",
+    "static/media/Visa.svg": "/static/media/Visa.82353806070b7eea5f2cd7863aa39746.svg",
+    "static/media/Mastercard.svg": "/static/media/Mastercard.4f563ba80817bc00eff10dd3c00306ca.svg",
+    "static/media/WeChat.svg": "/static/media/WeChat.659a0ff6e030a87b5d0a6bfe79240464.svg",
+    "static/media/Amex.svg": "/static/media/Amex.019306e19571eabf2c0d91ed854d0891.svg",
+    "static/media/AlignCenter.svg": "/static/media/AlignCenter.1b1985eddded1e3199dd03e120035d6f.svg",
+    "static/media/AlignLeft.svg": "/static/media/AlignLeft.4f8c5495e94f1083fc36ee9609d2d8f7.svg",
+    "static/media/AlignRight.svg": "/static/media/AlignRight.6e2cd19ee26c49701476aaf9f409ef38.svg",
+    "static/media/Card.svg": "/static/media/Card.9e79e0d49da7e600d61827872ee3ac92.svg",
+    "index.html": "/index.html",
+    "static/media/bank.svg": "/static/media/bank.5be31286c0e7821f96ee247088c5715c.svg",
+    "static/media/Card1.svg": "/static/media/Card1.b536a65595dc630a4dfec3e8bef83a50.svg",
+    "static/media/infoCircle.svg": "/static/media/infoCircle.f2407098c7e8b9bc090385d0cfcdb55f.svg",
+    "static/media/arrowLeft.svg": "/static/media/arrowLeft.e85c659857ec4dac7fb7e86a4f7703cd.svg",
+    "static/media/arrowRight.svg": "/static/media/arrowRight.5af6eab8bad1eb6e253126c1829a207d.svg",
+    "main.a1878afc.js.map": "/static/js/main.a1878afc.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.a1878afc.js"
+  ]
+}
